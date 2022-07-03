@@ -1,0 +1,35 @@
+<?php
+    if(isset($_POST['subir'])){
+        $email = $_POST['e-mail'];
+
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilos.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="box">
+        <div class="form">
+            <h1>Rellenar</h1>
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+                <input type="email" name="e-mail"placeholder="Correo electronico:" value="<?php 
+                    if(isset($email)) echo $email
+                ?>">
+                <div class="btn"><button type="submit" name="subir">Enviar</button></div>
+                <?php
+                     include("doc.php");
+                ?> 
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
